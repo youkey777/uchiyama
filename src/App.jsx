@@ -3,7 +3,7 @@ import {
   ArrowRight, Menu, X, Check, ArrowDown,
   Shield, TrendingUp, BookOpen, Home,
   GraduationCap, Coins, LineChart, Users,
-  FileText, Wallet, Heart, MessageCircle
+  FileText, Wallet, Heart, MessageCircle, Calendar
 } from 'lucide-react';
 
 /* フォントの読み込みとグローバルスタイルの定義 
@@ -253,8 +253,8 @@ const BrandSite = () => {
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover object-center lg:object-center"
-            style={{ objectPosition: 'center 30%' }}
+            className="w-full h-full object-cover"
+            style={{ objectPosition: '75% center' }}
           />
           {/* Gradient overlay from center to left */}
           <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 lg:via-slate-50/80 to-transparent"></div>
@@ -288,7 +288,7 @@ const BrandSite = () => {
               </a>
               <a
                 href="#case"
-                className="px-6 md:px-8 py-3 md:py-4 bg-sky-500 text-white rounded-full font-bold hover:bg-sky-600 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
+                className="px-6 md:px-8 py-3 md:py-4 border-2 border-sky-300 text-sky-600 rounded-full font-medium hover:bg-sky-50 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
               >
                 事例を見る
               </a>
@@ -402,11 +402,11 @@ const BrandSite = () => {
                 <div className="space-y-8">
                   <div className="flex justify-between items-end border-b border-slate-200 pb-2">
                     <span className="text-slate-500 font-medium">毎月の保険料</span>
-                    <span className="text-3xl font-bold text-slate-400">¥40,000</span>
+                    <span className="text-2xl md:text-3xl font-bold text-slate-400">¥40,000</span>
                   </div>
                   <div className="flex justify-between items-end border-b border-slate-200 pb-2">
                     <span className="text-slate-500 font-medium">65歳時点の資産</span>
-                    <span className="text-3xl font-bold text-slate-400">900万円</span>
+                    <span className="text-2xl md:text-3xl font-bold text-slate-400">900万円</span>
                   </div>
                 </div>
 
@@ -427,13 +427,13 @@ const BrandSite = () => {
                 <div className="space-y-10 relative z-10">
                   <div className="flex justify-between items-end border-b border-sky-200 pb-2">
                     <span className="text-slate-600 font-medium">毎月の保険料</span>
-                    <span className="text-4xl font-bold text-sky-600">¥10,000</span>
+                    <span className="text-3xl md:text-4xl font-bold text-sky-600">¥10,000</span>
                   </div>
 
                   <div className="space-y-2">
                     <div className="flex justify-between items-end border-b border-sky-200 pb-2">
-                      <span className="text-slate-600 font-medium">65歳時点の資産</span>
-                      <span className="text-4xl font-bold text-sky-600">2,000万円</span>
+                      <span className="text-slate-600 font-medium text-sm md:text-base">65歳時点の資産</span>
+                      <span className="text-2xl md:text-4xl font-bold text-sky-600">2,000万円</span>
                     </div>
                     <p className="text-right text-xs font-bold text-sky-500">資産が2倍以上に！</p>
                   </div>
@@ -442,60 +442,6 @@ const BrandSite = () => {
                 <p className="text-sm text-slate-500 mt-10 leading-relaxed relative z-10">
                   浮いた3万円を新NISAで運用(年利3-5%想定)。<br />
                   必要な保障は残しつつ、将来のための大きな資産形成へシフトしました。
-                </p>
-              </div>
-            </div>
-
-            {/* Bar Chart Comparison */}
-            <div className="mt-16 pt-8 border-t border-slate-200">
-              <h3 className="text-center text-slate-600 font-bold mb-8 text-base">資産形成イメージ</h3>
-
-              <div className="max-w-4xl mx-auto">
-                {/* Time labels */}
-                <div className="flex justify-between px-4 mb-6">
-                  <span className="text-sm text-slate-500 font-medium">現在（30代）</span>
-                  <span className="text-sm text-slate-500 font-medium">→</span>
-                  <span className="text-sm text-slate-500 font-medium">将来（65歳時点）</span>
-                </div>
-
-                {/* Bar charts side by side */}
-                <div className="grid grid-cols-2 gap-8 px-4">
-                  {/* Before (貯金のみ) */}
-                  <div className="text-center">
-                    <div className="bg-slate-100 rounded-2xl p-6 h-80 flex flex-col justify-end relative">
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 text-slate-400 text-xs font-medium">貯金のみ</div>
-                      <div
-                        className="bg-gradient-to-t from-slate-300 to-slate-400 rounded-lg mx-auto transition-all duration-1000 ease-out"
-                        style={{
-                          width: '60%',
-                          height: scrollY > 2200 ? '36%' : '0%',
-                          transitionDelay: '200ms'
-                        }}
-                      ></div>
-                      <div className="mt-4 text-2xl font-bold text-slate-600">900万円</div>
-                    </div>
-                  </div>
-
-                  {/* After (運用) */}
-                  <div className="text-center">
-                    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-6 h-80 flex flex-col justify-end relative border-2 border-sky-200">
-                      <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sky-600 text-xs font-bold">貯金+運用</div>
-                      <div
-                        className="bg-gradient-to-t from-sky-400 to-cyan-400 rounded-lg mx-auto transition-all duration-1000 ease-out shadow-lg"
-                        style={{
-                          width: '60%',
-                          height: scrollY > 2200 ? '80%' : '0%',
-                          transitionDelay: '400ms'
-                        }}
-                      ></div>
-                      <div className="mt-4 text-2xl font-bold text-sky-600">2,000万円</div>
-                      <div className="mt-1 text-xs font-bold text-sky-500">+1,100万円！</div>
-                    </div>
-                  </div>
-                </div>
-
-                <p className="text-xs text-slate-400 text-center mt-6">
-                  ※運用はシミュレーションであり、将来の成果を保証するものではありません。
                 </p>
               </div>
             </div>
@@ -510,12 +456,13 @@ const BrandSite = () => {
             <h2 className="text-3xl md:text-5xl font-light text-slate-800 mb-16">サービスメニュー</h2>
           </RevealOnScroll>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: '無料初回相談', desc: 'まずは現状をお聞かせください。', icon: MessageCircle },
-              { title: 'ライフプラン作成', desc: 'あなた専用のマネープランを設計。', icon: TrendingUp },
-              { title: '保険・運用の最適化', desc: '無駄を省いて効率よく備える。', icon: Shield },
-              { title: 'セカンドオピニオン', desc: '他社プランの見直しも可能。', icon: Users },
+              { title: '無料初回相談(60分)', desc: 'まずは現状をお聞かせください。', icon: MessageCircle },
+              { title: '家計診断', desc: '収支を分析し改善プランを作成。', icon: TrendingUp },
+              { title: '保険証券チェック', desc: '重複・過不足を確認し最適化。', icon: Shield },
+              { title: '資産運用の設計', desc: 'NISA/iDeCoを活用したプラン。', icon: LineChart },
+              { title: 'セカンドオピニオン', desc: '他社提案を中立的に診断。', icon: Users },
             ].map((item, idx) => (
               <RevealOnScroll key={idx} delay={idx * 100} className="group relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="mb-6">
@@ -568,9 +515,9 @@ const BrandSite = () => {
               { step: "05", label: "フォロー", sub: "実行支援" }
             ].map((item, idx) => (
               <RevealOnScroll key={idx} delay={idx * 100} className="bg-white p-8 rounded-full w-48 h-48 flex flex-col items-center justify-center shadow-sm border border-slate-100 relative group hover:scale-105 transition-transform duration-300">
-                <div className="text-sky-200 font-thin text-3xl mb-2">{item.step}</div>
+                <div className="text-sky-400 font-thin text-3xl mb-2">{item.step}</div>
                 <h3 className="font-bold text-slate-700 mb-1">{item.label}</h3>
-                <p className="text-xs text-slate-400">{item.sub}</p>
+                <p className="text-xs text-slate-500">{item.sub}</p>
               </RevealOnScroll>
             ))}
           </div>
@@ -706,20 +653,20 @@ const BrandSite = () => {
               name="name"
               placeholder="お名前"
               required
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-500"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-400"
             />
             <input
               type="email"
               name="email"
               placeholder="メールアドレス"
               required
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-500"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-400"
             />
             <textarea
               name="message"
               rows={5}
               placeholder="ご相談内容をご記入ください"
-              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors resize-none placeholder:text-slate-500"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors resize-none placeholder:text-slate-400"
             />
 
             <div className="pt-8 text-center">
