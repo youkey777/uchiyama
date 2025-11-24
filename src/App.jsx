@@ -3,7 +3,7 @@ import {
   ArrowRight, Menu, X, Check, ArrowDown,
   Shield, TrendingUp, BookOpen, Home,
   GraduationCap, Coins, LineChart, Users,
-  FileText, Wallet, Heart
+  FileText, Wallet, Heart, MessageCircle
 } from 'lucide-react';
 
 /* フォントの読み込みとグローバルスタイルの定義 
