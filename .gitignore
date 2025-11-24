@@ -32,3 +32,6 @@ Thumbs.db
 
 # Backup
 _backup/
+
+# Original images folder (using optimized versions in public/)
+画像/
