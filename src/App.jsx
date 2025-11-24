@@ -253,10 +253,11 @@ const BrandSite = () => {
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center lg:object-center"
+            style={{ objectPosition: 'center 30%' }}
           />
           {/* Gradient overlay from center to left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 lg:via-slate-50/80 to-transparent"></div>
         </div>
 
         {/* Animated Orbs */}
@@ -278,16 +279,16 @@ const BrandSite = () => {
               保険の見直しから資産形成まで、<br />
               一人ひとりに寄り添った<br className="md:hidden" />ライフプランを提案。
             </p>
-            <div className="flex gap-4 fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="flex flex-wrap gap-4 fade-in-up" style={{ animationDelay: '0.2s' }}>
               <a
                 href="#contact"
-                className="px-8 py-4 bg-gradient-to-r from-sky-500 to-cyan-400 text-white rounded-full font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-sky-500 to-cyan-400 text-white rounded-full font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
               >
                 無料相談を予約
               </a>
               <a
                 href="#case"
-                className="px-8 py-4 border-2 border-sky-500 text-sky-600 rounded-full font-bold hover:bg-sky-50 transition-all duration-300"
+                className="px-6 md:px-8 py-3 md:py-4 bg-sky-500 text-white rounded-full font-bold hover:bg-sky-600 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
               >
                 事例を見る
               </a>
@@ -439,118 +440,64 @@ const BrandSite = () => {
                 </div>
 
                 <p className="text-sm text-slate-500 mt-10 leading-relaxed relative z-10">
-                  浮いた3万円を新NISAで運用（年利3-5%想定）。<br />
+                  浮いた3万円を新NISAで運用(年利3-5%想定)。<br />
                   必要な保障は残しつつ、将来のための大きな資産形成へシフトしました。
                 </p>
-
-                {/* Animated Graph Background */}
-                <div className="absolute bottom-0 left-0 right-0 h-32 opacity-20 pointer-events-none flex items-end justify-around px-8 pb-0">
-                  {[20, 35, 45, 60, 75, 90, 100].map((h, i) => (
-                    <div
-                      key={i}
-                      className="w-4 bg-sky-600 rounded-t-md transition-all duration-1000 ease-out"
-                      style={{
-                        height: `${h}%`,
-                        transitionDelay: `${i * 100}ms`,
-                        transform: `scaleY(${scrollY > 2000 ? 1 : 0})`,
-                        transformOrigin: 'bottom'
-                      }}
-                    />
-                  ))}
-                </div>
               </div>
             </div>
 
-            {/* Asset Growth Chart */}
+            {/* Bar Chart Comparison */}
             <div className="mt-16 pt-8 border-t border-slate-200">
-              <h3 className="text-center text-slate-500 text-sm font-bold mb-8">資産形成イメージ</h3>
+              <h3 className="text-center text-slate-600 font-bold mb-8 text-base">資産形成イメージ</h3>
 
-              <div className="relative h-64 bg-gradient-to-b from-transparent to-sky-50/30 rounded-2xl p-8">
-                {/* Y-axis labels */}
-                <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-400 pr-4">
-                  <span>2,500万</span>
-                  <span>2,000万</span>
-                  <span>1,500万</span>
-                  <span>1,000万</span>
-                  <span>500万</span>
-                  <span>0</span>
+              <div className="max-w-4xl mx-auto">
+                {/* Time labels */}
+                <div className="flex justify-between px-4 mb-6">
+                  <span className="text-sm text-slate-500 font-medium">現在（30代）</span>
+                  <span className="text-sm text-slate-500 font-medium">→</span>
+                  <span className="text-sm text-slate-500 font-medium">将来（65歳時点）</span>
                 </div>
 
-                {/* Chart area */}
-                <div className="ml-12 h-full relative">
-                  {/* Grid lines */}
-                  {[0, 1, 2, 3, 4, 5].map((i) => (
-                    <div
-                      key={i}
-                      className="absolute left-0 right-0 border-t border-slate-200"
-                      style={{ top: `${i * 20}%` }}
-                    ></div>
-                  ))}
-
-                  {/* Before line (dashed) - 900万 */}
-                  <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                    <polyline
-                      points="0,80 25,78 50,76 75,74 100,72"
-                      fill="none"
-                      stroke="#cbd5e1"
-                      strokeWidth="2"
-                      strokeDasharray="5,5"
-                      vectorEffect="non-scaling-stroke"
-                    />
-                  </svg>
-
-                  {/* After line (solid) - 2000万 */}
-                  <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                    <defs>
-                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#0ea5e9" />
-                        <stop offset="100%" stopColor="#06b6d4" />
-                      </linearGradient>
-                    </defs>
-                    <polyline
-                      points="0,80 25,70 50,55 75,35 100,20"
-                      fill="none"
-                      stroke="url(#lineGradient)"
-                      strokeWidth="3"
-                      vectorEffect="non-scaling-stroke"
-                      className="transition-all duration-1000"
-                      style={{
-                        strokeDasharray: scrollY > 2200 ? 'none' : '1000',
-                        strokeDashoffset: scrollY > 2200 ? '0' : '1000'
-                      }}
-                    />
-                    {/* End point marker */}
-                    <circle
-                      cx="100%"
-                      cy="20%"
-                      r="4"
-                      fill="#0ea5e9"
-                      className="transition-opacity duration-1000"
-                      style={{ opacity: scrollY > 2200 ? 1 : 0 }}
-                    />
-                  </svg>
-
-                  {/* Label for After line */}
-                  <div
-                    className="absolute right-0 top-[15%] -translate-y-1/2 bg-sky-500 text-white text-xs px-3 py-1 rounded-full font-bold transition-all duration-1000"
-                    style={{
-                      opacity: scrollY > 2200 ? 1 : 0,
-                      transform: scrollY > 2200 ? 'translateY(-50%)' : 'translateY(-30%)'
-                    }}
-                  >
-                    2,000万(運用)
+                {/* Bar charts side by side */}
+                <div className="grid grid-cols-2 gap-8 px-4">
+                  {/* Before (貯金のみ) */}
+                  <div className="text-center">
+                    <div className="bg-slate-100 rounded-2xl p-6 h-80 flex flex-col justify-end relative">
+                      <div className="absolute top-4 left-1/2 -translate-x-1/2 text-slate-400 text-xs font-medium">貯金のみ</div>
+                      <div
+                        className="bg-gradient-to-t from-slate-300 to-slate-400 rounded-lg mx-auto transition-all duration-1000 ease-out"
+                        style={{
+                          width: '60%',
+                          height: scrollY > 2200 ? '36%' : '0%',
+                          transitionDelay: '200ms'
+                        }}
+                      ></div>
+                      <div className="mt-4 text-2xl font-bold text-slate-600">900万円</div>
+                    </div>
                   </div>
 
-                  {/* Label for Before line */}
-                  <div className="absolute right-0 top-[68%] -translate-y-1/2 text-slate-400 text-xs px-3 py-1 rounded-full font-medium">
-                    900万(貯金のみ)
+                  {/* After (運用) */}
+                  <div className="text-center">
+                    <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-2xl p-6 h-80 flex flex-col justify-end relative border-2 border-sky-200">
+                      <div className="absolute top-4 left-1/2 -translate-x-1/2 text-sky-600 text-xs font-bold">貯金+運用</div>
+                      <div
+                        className="bg-gradient-to-t from-sky-400 to-cyan-400 rounded-lg mx-auto transition-all duration-1000 ease-out shadow-lg"
+                        style={{
+                          width: '60%',
+                          height: scrollY > 2200 ? '80%' : '0%',
+                          transitionDelay: '400ms'
+                        }}
+                      ></div>
+                      <div className="mt-4 text-2xl font-bold text-sky-600">2,000万円</div>
+                      <div className="mt-1 text-xs font-bold text-sky-500">+1,100万円！</div>
+                    </div>
                   </div>
                 </div>
+
+                <p className="text-xs text-slate-400 text-center mt-6">
+                  ※運用はシミュレーションであり、将来の成果を保証するものではありません。
+                </p>
               </div>
-
-              <p className="text-xs text-slate-400 text-center mt-4">
-                ※運用はシミュレーションであり、将来の成果を保証するものではありません。
-              </p>
             </div>
           </RevealOnScroll>
         </div>
@@ -563,29 +510,22 @@ const BrandSite = () => {
             <h2 className="text-3xl md:text-5xl font-light text-slate-800 mb-16">サービスメニュー</h2>
           </RevealOnScroll>
 
-          <div className="flex flex-col">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "無料初回相談（60分）", desc: "まずは現状や課題の確認を行います。どんな些細なことでもご相談ください。", isFree: true },
-              { title: "家計診断・見直し", desc: "現状の収支を分析し、無理のない改善プランを作成します。" },
-              { title: "資産運用設計", desc: "NISA/iDeCoを活用した、あなただけのポートフォリオを提案します。" },
-              { title: "保険証券チェック", desc: "重複や過不足を確認し、最適な保障内容へスリム化します。" },
-              { title: "住宅ローン相談", desc: "購入予算の算出から、借り換えシミュレーションまで。" },
-              { title: "セカンドオピニオン", desc: "他社提案の妥当性を、中立的な立場から診断します。" },
-            ].map((service, idx) => (
-              <RevealOnScroll key={idx} delay={idx * 50} className="group relative border-t border-slate-100 py-12 flex flex-col md:flex-row md:items-center justify-between gap-4 cursor-pointer overflow-hidden transition-colors hover:bg-slate-50/50">
-                <div className="space-y-2 relative z-10">
-                  {/* 全ての項目を同じ空色・細字（font-light）に統一 */}
-                  <h3 className="text-2xl md:text-3xl font-light text-sky-600 group-hover:translate-x-4 transition-transform duration-500 ease-out">
-                    {service.title}
-                  </h3>
-                  <p className="text-slate-400 md:max-w-lg group-hover:translate-x-4 transition-transform duration-500 delay-75 ease-out">
-                    {service.desc}
-                  </p>
+              { title: '無料初回相談', desc: 'まずは現状をお聞かせください。', icon: MessageCircle },
+              { title: 'ライフプラン作成', desc: 'あなた専用のマネープランを設計。', icon: TrendingUp },
+              { title: '保険・運用の最適化', desc: '無駄を省いて効率よく備える。', icon: Shield },
+              { title: 'セカンドオピニオン', desc: '他社プランの見直しも可能。', icon: Users },
+            ].map((item, idx) => (
+              <RevealOnScroll key={idx} delay={idx * 100} className="group relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="mb-6">
+                  <item.icon size={32} className="text-sky-500" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-sky-50/0 via-sky-50/30 to-sky-50/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out"></div>
+                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
               </RevealOnScroll>
             ))}
-            <div className="border-t border-slate-100"></div>
           </div>
 
           {/* 取扱商品（トピックス）：おしゃれなデザインに */}
@@ -761,18 +701,26 @@ const BrandSite = () => {
           </RevealOnScroll>
 
           <form className="space-y-8 text-left max-w-xl mx-auto">
-            <div className="space-y-2">
-              <label className="text-sm text-slate-400">お名前</label>
-              <input type="text" className="w-full bg-transparent border-b border-slate-300 py-3 focus:outline-none focus:border-sky-500 transition-colors placeholder-slate-200" placeholder="例：山田 太郎" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm text-slate-400">メールアドレス</label>
-              <input type="email" className="w-full bg-transparent border-b border-slate-300 py-3 focus:outline-none focus:border-sky-500 transition-colors placeholder-slate-200" placeholder="例：example@email.com" />
-            </div>
-            <div className="space-y-2">
-              <label className="text-sm text-slate-400">ご相談内容</label>
-              <textarea rows={4} className="w-full bg-transparent border-b border-slate-300 py-3 focus:outline-none focus:border-sky-500 transition-colors placeholder-slate-200 resize-none" placeholder="ご相談内容をご記入ください" />
-            </div>
+            <input
+              type="text"
+              name="name"
+              placeholder="お名前"
+              required
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-500"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="メールアドレス"
+              required
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors placeholder:text-slate-500"
+            />
+            <textarea
+              name="message"
+              rows={5}
+              placeholder="ご相談内容をご記入ください"
+              className="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg focus:outline-none focus:border-sky-400 transition-colors resize-none placeholder:text-slate-500"
+            />
 
             <div className="pt-8 text-center">
               <button
