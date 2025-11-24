@@ -246,59 +246,51 @@ const BrandSite = () => {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center px-6 md:px-12 lg:px-24 pt-20">
-        <div className="max-w-7xl w-full mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      {/* Hero Section - Redesigned */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50">
+        {/* Right Half - Full Image with Gradient Overlay */}
+        <div className="absolute inset-y-0 right-0 w-full lg:w-1/2">
+          <img
+            src="/hero_main.jpg"
+            alt="Financial Planning Consultation"
+            className="w-full h-full object-cover"
+          />
+          {/* Gradient overlay from center to left */}
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent"></div>
+        </div>
 
-          <div className="relative z-10 space-y-12">
-            <div className="space-y-6">
-              <p className="text-sky-600 font-medium tracking-widest text-sm uppercase fade-in-up">Financial Partner</p>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.1] text-slate-800 tracking-tight fade-in-up" style={{ animationDelay: '0.1s' }}>
-                未来を、<br />
-                <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-400">透明</span>にする。
-              </h1>
+        {/* Animated Orbs */}
+        <div className="absolute top-20 left-10 w-64 h-64 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+        <div className="absolute -bottom-8 left-1/3 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+          {/* Left Content */}
+          <div className="max-w-2xl space-y-8 fade-in-up">
+            <div className="inline-block px-4 py-2 bg-sky-100 text-sky-600 rounded-full text-sm font-bold">
+              FINANCIAL PLANNING
             </div>
-
-            <p className="text-lg text-slate-500 leading-loose max-w-md fade-in-up" style={{ animationDelay: '0.2s' }}>
-              お金の不安は、見えないことから生まれます。<br />
-              霧を晴らすように、あなたの家計と未来を<br />
-              クリアにデザインするパートナーです。
+            <h1 className="text-4xl md:text-6xl font-bold text-slate-800 leading-tight">
+              あなたの夢を、<br />
+              <span className="text-sky-500">お金のプロ</span>が<br />
+              カタチにします。
+            </h1>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              保険の見直しから資産形成まで、<br />
+              一人ひとりに寄り添った<br className="md:hidden" />ライフプランを提案。
             </p>
-
-            <div className="flex flex-wrap gap-6 pt-4 fade-in-up" style={{ animationDelay: '0.3s' }}>
-              <button
-                onClick={() => scrollTo('contact')}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="group relative px-10 py-4 bg-slate-800 text-white rounded-full overflow-hidden"
+            <div className="flex gap-4 fade-in-up" style={{ animationDelay: '0.2s' }}>
+              <a
+                href="#contact"
+                className="px-8 py-4 bg-gradient-to-r from-sky-500 to-cyan-400 text-white rounded-full font-bold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center gap-4 font-medium">
-                  まずは相談する <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-                <div className="absolute inset-0 bg-sky-600 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out"></div>
-              </button>
-
-              <button
-                onClick={() => scrollTo('philosophy')}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="px-8 py-4 text-slate-600 hover:text-sky-600 transition-colors font-medium border-b border-slate-300 hover:border-sky-600"
+                無料相談を予約
+              </a>
+              <a
+                href="#case"
+                className="px-8 py-4 border-2 border-sky-500 text-sky-600 rounded-full font-bold hover:bg-sky-50 transition-all duration-300"
               >
-                私の考え方
-              </button>
-            </div>
-          </div>
-
-          <div className="relative h-[50vh] lg:h-[60vh] fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <div className="absolute inset-0 bg-gradient-to-tr from-sky-100 to-transparent rounded-[3rem] transform rotate-3"></div>
-            <div className="absolute inset-4 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-sky-100 transform -rotate-2 transition-transform duration-[2s] hover:rotate-0">
-              {/* キービジュアル: 1枚目の画像 */}
-              <img
-                src="/hero_main.jpg"
-                alt="Consulting"
-                className="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-slate-900/10 mix-blend-overlay"></div>
+                事例を見る
+              </a>
             </div>
           </div>
         </div>
@@ -467,6 +459,98 @@ const BrandSite = () => {
                   ))}
                 </div>
               </div>
+            </div>
+
+            {/* Asset Growth Chart */}
+            <div className="mt-16 pt-8 border-t border-slate-200">
+              <h3 className="text-center text-slate-500 text-sm font-bold mb-8">資産形成イメージ</h3>
+
+              <div className="relative h-64 bg-gradient-to-b from-transparent to-sky-50/30 rounded-2xl p-8">
+                {/* Y-axis labels */}
+                <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-400 pr-4">
+                  <span>2,500万</span>
+                  <span>2,000万</span>
+                  <span>1,500万</span>
+                  <span>1,000万</span>
+                  <span>500万</span>
+                  <span>0</span>
+                </div>
+
+                {/* Chart area */}
+                <div className="ml-12 h-full relative">
+                  {/* Grid lines */}
+                  {[0, 1, 2, 3, 4, 5].map((i) => (
+                    <div
+                      key={i}
+                      className="absolute left-0 right-0 border-t border-slate-200"
+                      style={{ top: `${i * 20}%` }}
+                    ></div>
+                  ))}
+
+                  {/* Before line (dashed) - 900万 */}
+                  <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                    <polyline
+                      points="0,80 25,78 50,76 75,74 100,72"
+                      fill="none"
+                      stroke="#cbd5e1"
+                      strokeWidth="2"
+                      strokeDasharray="5,5"
+                      vectorEffect="non-scaling-stroke"
+                    />
+                  </svg>
+
+                  {/* After line (solid) - 2000万 */}
+                  <svg className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#0ea5e9" />
+                        <stop offset="100%" stopColor="#06b6d4" />
+                      </linearGradient>
+                    </defs>
+                    <polyline
+                      points="0,80 25,70 50,55 75,35 100,20"
+                      fill="none"
+                      stroke="url(#lineGradient)"
+                      strokeWidth="3"
+                      vectorEffect="non-scaling-stroke"
+                      className="transition-all duration-1000"
+                      style={{
+                        strokeDasharray: scrollY > 2200 ? 'none' : '1000',
+                        strokeDashoffset: scrollY > 2200 ? '0' : '1000'
+                      }}
+                    />
+                    {/* End point marker */}
+                    <circle
+                      cx="100%"
+                      cy="20%"
+                      r="4"
+                      fill="#0ea5e9"
+                      className="transition-opacity duration-1000"
+                      style={{ opacity: scrollY > 2200 ? 1 : 0 }}
+                    />
+                  </svg>
+
+                  {/* Label for After line */}
+                  <div
+                    className="absolute right-0 top-[15%] -translate-y-1/2 bg-sky-500 text-white text-xs px-3 py-1 rounded-full font-bold transition-all duration-1000"
+                    style={{
+                      opacity: scrollY > 2200 ? 1 : 0,
+                      transform: scrollY > 2200 ? 'translateY(-50%)' : 'translateY(-30%)'
+                    }}
+                  >
+                    2,000万(運用)
+                  </div>
+
+                  {/* Label for Before line */}
+                  <div className="absolute right-0 top-[68%] -translate-y-1/2 text-slate-400 text-xs px-3 py-1 rounded-full font-medium">
+                    900万(貯金のみ)
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-slate-400 text-center mt-4">
+                ※運用はシミュレーションであり、将来の成果を保証するものではありません。
+              </p>
             </div>
           </RevealOnScroll>
         </div>
