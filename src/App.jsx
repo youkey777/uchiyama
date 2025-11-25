@@ -253,7 +253,7 @@ const BrandSite = () => {
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover translate-x-[60px] lg:translate-x-0"
+            className="w-full h-full object-cover translate-x-[90px] lg:translate-x-0"
             style={{ objectPosition: '75% center' }}
           />
           {/* Gradient overlay from center to left */}
@@ -527,7 +527,8 @@ const BrandSite = () => {
               </div>
 
               {/* After */}
-              <div className="bg-sky-50/50 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 lg:p-12 border border-sky-100 relative overflow-hidden group hover:shadow-lg transition-all duration-500">
+              {/* After */}
+              <div className="bg-sky-50/50 rounded-[1.5rem] md:rounded-[2rem] p-6 md:p-8 lg:p-12 border border-sky-100 relative overflow-hidden group hover:shadow-lg transition-all duration-500 transform hover:-translate-y-1 animate-on-scroll">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-sky-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                 <div className="text-center mb-10 relative z-10">
@@ -541,12 +542,16 @@ const BrandSite = () => {
                     <span className="text-3xl md:text-4xl font-bold text-sky-600">¥10,000</span>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-4">
                     <div className="flex justify-between items-end border-b border-sky-200 pb-2">
                       <span className="text-slate-600 font-medium text-sm md:text-base">65歳時点の資産</span>
-                      <span className="text-2xl md:text-4xl font-bold text-sky-600">2,000万円</span>
+                      <span className="text-3xl md:text-5xl font-bold text-sky-600">2,000万円</span>
                     </div>
-                    <p className="text-right text-xs font-bold text-sky-500">資産が2倍以上に！</p>
+                    <div className="text-right">
+                      <span className="inline-block bg-gradient-to-r from-yellow-200 to-yellow-100 text-yellow-800 text-sm md:text-base font-bold px-4 py-2 rounded-full shadow-sm transform rotate-[-2deg]">
+                        資産が2倍以上に！
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -564,7 +569,7 @@ const BrandSite = () => {
       <section id="service" className="py-32 px-6 md:px-12 lg:px-24 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <h2 className="text-3xl md:text-5xl font-light text-slate-800 mb-16">サービスメニュー</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-16">サービスメニュー</h2>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
