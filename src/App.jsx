@@ -253,7 +253,7 @@ const BrandSite = () => {
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover translate-x-[15px] lg:translate-x-0"
+            className="w-full h-full object-cover translate-x-[60px] lg:translate-x-0"
             style={{ objectPosition: '75% center' }}
           />
           {/* Gradient overlay from center to left */}
@@ -353,7 +353,7 @@ const BrandSite = () => {
                   <div className="hidden md:block absolute -left-12 top-0 text-sm font-bold text-sky-200 -rotate-90 origin-bottom-right translate-y-8">
                     POINT
                   </div>
-                  <span className="text-6xl md:text-8xl font-thin text-sky-100 absolute -top-12 -left-4 md:-left-12 -z-10 group-hover:text-sky-200 transition-colors duration-500">
+                  <span className="text-6xl md:text-8xl font-thin text-sky-200 absolute -top-12 -left-4 md:-left-12 -z-10 group-hover:text-sky-300 transition-colors duration-500">
                     {item.num}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 group-hover:translate-x-2 transition-transform duration-300">
@@ -495,7 +495,7 @@ const BrandSite = () => {
 
             {/* Header */}
             <div className="text-center mb-16">
-              <span className="inline-block py-1 px-3 border-b-2 border-sky-200 text-slate-500 font-bold tracking-widest text-sm uppercase mb-6">Case.01</span>
+              <span className="inline-block py-1 px-3 border-b-2 border-sky-200 text-slate-500 font-bold tracking-widest text-sm uppercase mb-6">見直し事例</span>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
                 30代 共働き ご夫婦 （お子様2人）
               </h2>
@@ -569,17 +569,18 @@ const BrandSite = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: '無料初回相談(60分)', desc: 'まずは現状をお聞かせください。', icon: MessageCircle },
-              { title: '家計診断', desc: '収支を分析し改善プランを作成。', icon: TrendingUp },
-              { title: '保険証券チェック', desc: '重複・過不足を確認し最適化。', icon: Shield },
-              { title: '資産運用の設計', desc: 'NISA/iDeCoを活用したプラン。', icon: LineChart },
-              { title: 'セカンドオピニオン', desc: '他社提案を中立的に診断。', icon: Users },
+              { title: '無料初回相談（60分）', desc: 'まずは現状や課題の確認を行います。どんな些細なことでもご相談ください。', icon: MessageCircle },
+              { title: '家計診断・見直し', desc: '現状の収支を分析し、無理のない改善プランを作成します。', icon: TrendingUp },
+              { title: '資産運用設計', desc: 'NISA/iDeCoを活用した、あなただけのポートフォリオを提案します。', icon: LineChart },
+              { title: '保険証券チェック', desc: '重複や過不足を確認し、最適な保障内容へスリム化します。', icon: Shield },
+              { title: '住宅ローン相談', desc: '購入予算の算出から、借り換えシミュレーションまで。', icon: Home },
+              { title: 'セカンドオピニオン', desc: '他社提案の妥当性を、中立的な立場から診断します。', icon: Users },
             ].map((item, idx) => (
               <RevealOnScroll key={idx} delay={idx * 100} className="group relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:border-sky-200 hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <div className="mb-6">
-                  <item.icon size={32} className="text-sky-500" />
+                  <item.icon size={32} className="text-sky-400" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-slate-700 mb-3">{item.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 to-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
               </RevealOnScroll>
@@ -588,7 +589,7 @@ const BrandSite = () => {
 
           {/* 取扱商品（トピックス）：おしゃれなデザインに */}
           <RevealOnScroll delay={200} className="mt-24">
-            <h4 className="text-sm font-bold text-slate-400 text-center mb-12 uppercase tracking-widest">取扱商品</h4>
+            <h4 className="text-sm font-bold text-sky-500 text-center mb-12 uppercase tracking-widest">取扱商品</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {[
                 { label: "生命保険\n医療保険", icon: <Heart size={24} /> },
