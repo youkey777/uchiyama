@@ -247,15 +247,18 @@ const BrandSite = () => {
       </div>
 
       {/* Hero Section - Redesigned */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-sky-50/40 to-white">
         {/* Right Half - Full Image with Gradient Overlay */}
-        <div className="absolute inset-y-0 right-0 w-full lg:w-1/2">
-          <img
-            src="/hero_main.jpg"
-            alt="Financial Planning Consultation"
-            className="h-full w-full object-cover translate-x-[260px] lg:translate-x-0 hero-image-mask"
-            style={{ objectPosition: 'center right' }}
-          />
+        <div className="absolute inset-y-0 right-0 w-[60%] md:w-[60%] lg:w-[70%] overflow-hidden">
+          <picture>
+            <source media="(max-width: 767px)" srcSet="/sumaho.jpg" />
+            <img
+              src="/hero_main.jpg"
+              alt="Financial Planning Consultation"
+              className="h-full w-full max-w-none md:max-w-full object-cover md:translate-x-0 hero-image-mask"
+              style={{ objectPosition: 'center right' }}
+            />
+          </picture>
         </div>
 
         {/* Animated Orbs */}

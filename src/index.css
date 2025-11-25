@@ -17,13 +17,20 @@
 }
 
 .hero-image-mask {
-  mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 40%, black 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+}
+
+@media (min-width: 768px) {
+  .hero-image-mask {
+    mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%, black 100%);
+  }
 }
 
 @media (min-width: 1024px) {
   .hero-image-mask {
-    mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%, black 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 100%);
   }
 }
