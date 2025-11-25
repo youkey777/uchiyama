@@ -251,7 +251,7 @@ const BrandSite = () => {
         {/* Right Half - Full Image with Gradient Overlay */}
         <div className="absolute inset-y-0 right-0 w-[60%] md:w-[60%] lg:w-[70%] overflow-hidden">
           <picture>
-            <source media="(max-width: 767px)" srcSet="/sumaho.jpg" />
+            <source media="(max-width: 1023px)" srcSet="/sumaho.jpg" />
             <img
               src="/hero_main.jpg"
               alt="Financial Planning Consultation"
