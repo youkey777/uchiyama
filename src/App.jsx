@@ -247,24 +247,22 @@ const BrandSite = () => {
       </div>
 
       {/* Hero Section - Redesigned */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-slate-50">
         {/* Right Half - Full Image with Gradient Overlay */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-1/2">
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover translate-x-[90px] lg:translate-x-0"
-            style={{ objectPosition: '75% center' }}
+            className="h-full w-full object-cover translate-x-[260px] lg:translate-x-0 hero-image-mask"
+            style={{ objectPosition: 'center right' }}
           />
-          {/* Gradient overlay from center to left */}
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/95 lg:via-slate-50/80 to-transparent"></div>
         </div>
 
         {/* Animated Orbs */}
         <div className="absolute top-20 left-10 w-64 h-64 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute -bottom-8 left-1/3 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
           {/* Left Content */}
           <div className="max-w-2xl space-y-8 fade-in-up">
             <div className="inline-block px-4 py-2 bg-sky-100 text-sky-600 rounded-full text-sm font-bold">
@@ -545,7 +543,7 @@ const BrandSite = () => {
                   <div className="space-y-4">
                     <div className="flex justify-between items-end border-b border-sky-200 pb-2">
                       <span className="text-slate-600 font-medium text-sm md:text-base">65歳時点の資産</span>
-                      <span className="text-3xl md:text-5xl font-bold text-sky-600">2,000万円</span>
+                      <span className="text-3xl md:text-4xl font-bold text-sky-600 whitespace-nowrap">2,000万円</span>
                     </div>
                     <div className="text-right">
                       <span className="inline-block bg-gradient-to-r from-yellow-200 to-yellow-100 text-yellow-800 text-sm md:text-base font-bold px-4 py-2 rounded-full shadow-sm transform rotate-[-2deg]">
@@ -569,7 +567,7 @@ const BrandSite = () => {
       <section id="service" className="py-32 px-6 md:px-12 lg:px-24 bg-white relative">
         <div className="max-w-7xl mx-auto">
           <RevealOnScroll>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-800 mb-16">サービスメニュー</h2>
+            <h2 className="text-3xl md:text-4xl font-light text-slate-800 mb-10">サービスメニュー</h2>
           </RevealOnScroll>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -594,7 +592,9 @@ const BrandSite = () => {
 
           {/* 取扱商品（トピックス）：おしゃれなデザインに */}
           <RevealOnScroll delay={200} className="mt-24">
-            <h4 className="text-sm font-bold text-sky-500 text-center mb-12 uppercase tracking-widest">取扱商品</h4>
+            <div className="text-center mb-12">
+              <h4 className="text-sm font-bold text-slate-800 uppercase tracking-widest inline-block border-b-2 border-sky-200 pb-2">取扱商品</h4>
+            </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
               {[
                 { label: "生命保険\n医療保険", icon: <Heart size={24} /> },
