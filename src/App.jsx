@@ -265,21 +265,25 @@ const BrandSite = () => {
         <div className="absolute top-20 left-10 w-64 h-64 bg-sky-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
         <div className="absolute -bottom-8 left-1/3 w-64 h-64 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-16 lg:px-12 relative z-10 w-full">
           {/* Left Content */}
           <div className="max-w-2xl space-y-8 fade-in-up">
             <div className="inline-block px-4 py-2 bg-sky-100 text-sky-600 rounded-full text-sm font-bold">
               FINANCIAL PLANNING
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-slate-800 leading-tight">
+            <h1 className="text-3xl md:text-6xl font-bold text-slate-800 leading-tight">
               あなたの夢を、<br />
               <span className="text-sky-500">お金のプロ</span>が<br />
               カタチにします。
             </h1>
-            <p className="text-lg text-slate-600 leading-relaxed">
-              保険の見直しから資産形成まで、<br />
-              一人ひとりに寄り添った<br className="md:hidden" />ライフプランを提案。
-            </p>
+            <div className="relative inline-block md:block">
+              {/* Ambient Fog Layer (Mobile Only) */}
+              <div className="absolute -inset-8 -z-10 bg-[radial-gradient(closest-side,rgba(255,255,255,0.8)_0%,rgba(255,255,255,0)_100%)] blur-2xl md:hidden"></div>
+              <p className="text-lg text-slate-600 leading-relaxed relative z-10">
+                保険の見直しから資産形成まで、<br />
+                一人ひとりに寄り添った<br className="md:hidden" />ライフプランを提案。
+              </p>
+            </div>
             <div className="flex flex-wrap gap-4 fade-in-up" style={{ animationDelay: '0.2s' }}>
               <a
                 href="#contact"
@@ -350,11 +354,11 @@ const BrandSite = () => {
                   desc: "特定の金融機関に属さない独立系FPだからこそ、メリットだけでなくデメリットも包み隠さずお伝えできます。"
                 }
               ].map((item, idx) => (
-                <RevealOnScroll key={idx} className="group relative pl-8 md:pl-0 border-l md:border-l-0 border-slate-200">
+                <RevealOnScroll key={idx} className="group relative pl-12 md:pl-24 border-l md:border-l-0 border-slate-200">
                   <div className="hidden md:block absolute -left-12 top-0 text-sm font-bold text-sky-200 -rotate-90 origin-bottom-right translate-y-8">
                     POINT
                   </div>
-                  <span className="text-6xl md:text-8xl font-thin text-sky-200 absolute -top-12 -left-4 md:-left-12 -z-10 group-hover:text-sky-300 transition-colors duration-500">
+                  <span className="text-6xl md:text-8xl font-thin text-sky-200 absolute -top-12 -left-2 md:-left-8 -z-10 group-hover:text-sky-300 transition-colors duration-500">
                     {item.num}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4 group-hover:translate-x-2 transition-transform duration-300">
@@ -620,8 +624,14 @@ const BrandSite = () => {
       </section>
 
       {/* Flow Section */}
-      <section id="flow" className="py-24 bg-slate-50 relative border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
+      <section id="flow" className="py-24 relative border-t border-slate-100 overflow-hidden">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 z-0">
+          <img src="/flow_bg_office.png" alt="" className="w-full h-full object-cover opacity-50" />
+          <div className="absolute inset-0 bg-white/40"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
           <RevealOnScroll>
             <h2 className="text-3xl font-light text-center text-slate-800 mb-16">相談の流れ</h2>
           </RevealOnScroll>
