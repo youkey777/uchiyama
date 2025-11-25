@@ -277,8 +277,8 @@ const BrandSite = () => {
               カタチにします。
             </h1>
             <div className="relative inline-block md:block">
-              {/* Ambient Fog Layer (Mobile Only) */}
-              <div className="absolute -inset-8 -z-10 bg-[radial-gradient(closest-side,rgba(255,255,255,0.8)_0%,rgba(255,255,255,0)_100%)] blur-2xl md:hidden"></div>
+              {/* Ambient Fog Layer (Mobile Only) - Strengthened */}
+              <div className="absolute -inset-16 -z-10 bg-[radial-gradient(closest-side,rgba(255,255,255,0.95)_0%,rgba(255,255,255,0)_100%)] blur-2xl md:hidden"></div>
               <p className="text-lg text-slate-600 leading-relaxed relative z-10">
                 保険の見直しから資産形成まで、<br />
                 一人ひとりに寄り添った<br className="md:hidden" />ライフプランを提案。
@@ -627,8 +627,8 @@ const BrandSite = () => {
       <section id="flow" className="py-24 relative border-t border-slate-100 overflow-hidden">
         {/* Background Image Layer */}
         <div className="absolute inset-0 z-0">
-          <img src="/flow_bg_office.png" alt="" className="w-full h-full object-cover opacity-50" />
-          <div className="absolute inset-0 bg-white/40"></div>
+          <img src="/flow_bg_office.png" alt="" className="w-full h-full object-cover opacity-70" />
+          <div className="absolute inset-0 bg-white/30"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
