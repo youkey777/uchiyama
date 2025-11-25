@@ -253,7 +253,7 @@ const BrandSite = () => {
           <img
             src="/hero_main.jpg"
             alt="Financial Planning Consultation"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover translate-x-[15px] lg:translate-x-0"
             style={{ objectPosition: '75% center' }}
           />
           {/* Gradient overlay from center to left */}
@@ -288,7 +288,7 @@ const BrandSite = () => {
               </a>
               <a
                 href="#case"
-                className="px-6 md:px-8 py-3 md:py-4 border-2 border-sky-300 text-sky-600 rounded-full font-medium hover:bg-sky-50 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
+                className="px-6 md:px-8 py-3 md:py-4 border-2 border-sky-300 text-sky-600 bg-white rounded-full font-medium hover:bg-sky-50 transition-all duration-300 whitespace-nowrap text-sm md:text-base"
               >
                 事例を見る
               </a>
@@ -366,6 +366,117 @@ const BrandSite = () => {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Profile Section (Moved) */}
+      <section id="profile" className="py-32 bg-white px-6 md:px-12 lg:px-24">
+        <div className="max-w-5xl mx-auto">
+          {/* Title & Name (Moved to top) */}
+          <div className="mb-12 text-center md:text-left">
+            <span className="text-sky-600 font-medium tracking-widest text-sm uppercase mb-2 block">Profile</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800">内山 英</h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-start gap-12 md:gap-24">
+            <div className="w-full md:w-5/12 space-y-12 sticky top-32">
+              <RevealOnScroll animation="fade-right">
+                <div className="relative group">
+                  <div className="aspect-[3/4] overflow-hidden rounded-[2rem] relative z-10 shadow-2xl">
+                    {/* プロフィール画像: 2枚目の画像 */}
+                    <img
+                      src="/profile_main.jpg"
+                      alt="Profile"
+                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <h4 className="text-sm font-bold text-slate-400 mb-6 border-b border-slate-200 pb-2 inline-block uppercase tracking-widest">保有資格</h4>
+                  <div className="grid grid-cols-1 gap-3">
+                    {["FP技能士", "公的年金アドバイザー", "住宅ローンアドバイザー", "確定拠出年金診断士", "がんファイナンスアドバイザー", "生保損保保険募集人", "お金の小学校認定講師"].map((lic, i) => (
+                      <div key={i} className="flex items-center gap-3 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100 text-sm text-slate-600 hover:bg-white hover:shadow-sm transition-all">
+                        <div className="bg-sky-100 p-1 rounded-full"><Check size={12} className="text-sky-600" /></div>
+                        {lic}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
+
+            <div className="w-full md:w-7/12 space-y-16">
+              <RevealOnScroll>
+                <div className="space-y-8">
+                  <div>
+                    <h2 className="text-3xl font-light text-slate-800 leading-tight">
+                      年間100冊の本と、<br />
+                      等身大の経験を武器に。
+                    </h2>
+                  </div>
+
+                  <div className="space-y-6 text-slate-600 leading-relaxed">
+                    <p>
+                      1979年 静岡生まれ。営業職を経て、独立を決意。「お金」で人生の選択肢を狭めてほしくないという想いから、FPとしての活動をスタートしました。
+                    </p>
+                    <p>
+                      独立後の成功と葛藤、そして年間100冊の読書で培った知識を活かし、教科書通りではない「生きたお金の知恵」をお伝えします。
+                    </p>
+                  </div>
+                </div>
+
+                {/* 経歴 */}
+                <div className="pt-8">
+                  <h4 className="text-sm font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2 inline-block">これまでの歩み</h4>
+                  <div className="space-y-8 border-l-2 border-slate-100 ml-3 pl-8 relative">
+                    {[
+                      { year: "10代", title: "バスケに明け暮れた青春時代", desc: "静岡生まれ。小中高とバスケ部に所属。近畿大学入学を機に大阪へ転居。" },
+                      { year: "20代", title: "「学び」への目覚め", desc: "営業・マネージメント職を経験。友人の影響で猛勉強を開始し、年間100冊の読書を10年継続。" },
+                      { year: "30代", title: "独立、そして成功と葛藤", desc: "営業代行で独立し年商2億を達成。雑誌の取材を2回受けるなど実績を残すが、より個人の人生に寄り添う道を志す。" },
+                      { year: "現在", title: "FPとして奔走する日々", desc: "独立系FP事務所へ所属。「お金の小学校認定講師」としても活動中。お客様のお金の問題解決に奔走中。" },
+                    ].map((item, i) => (
+                      <div key={i} className="relative group">
+                        <span className={`absolute -left-[39px] top-1.5 w-5 h-5 rounded-full border-4 border-white transition-colors duration-300 ${i === 3 ? 'bg-sky-500 ring-2 ring-sky-100' : 'bg-slate-300 group-hover:bg-sky-300'}`}></span>
+                        <span className={`text-sm font-bold block mb-1 transition-colors duration-300 ${i === 3 ? 'text-sky-600' : 'text-slate-400 group-hover:text-sky-500'}`}>{item.year}</span>
+                        <h5 className="text-lg font-bold text-slate-700 group-hover:text-sky-700 transition-colors">{item.title}</h5>
+                        <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </RevealOnScroll>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 書籍監修セクション (Moved) */}
+      <section className="py-24 bg-slate-50 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
+          <RevealOnScroll className="bg-white rounded-[3rem] p-12 md:p-16 shadow-xl flex flex-col md:flex-row items-center gap-12 relative overflow-hidden border border-slate-100">
+            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-sky-100/50 via-transparent to-transparent pointer-events-none"></div>
+
+            <div className="md:w-1/2 space-y-6 z-10">
+              <span className="text-sky-600 font-medium tracking-widest text-sm uppercase block mb-2">Works</span>
+              <h2 className="text-3xl font-bold text-slate-800">書籍監修</h2>
+              <p className="text-slate-600 leading-relaxed">
+                「お金の小学校」「退職金で損する人得する人」など、お金に関する書籍の監修も行っています。<br />
+                難しいことを分かりやすく伝えることを大切にしています。
+              </p>
+            </div>
+
+            <div className="md:w-1/2 flex gap-6 z-10 justify-center">
+              {/* 書籍画像1 (3枚目) */}
+              <div className="w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
+                <img src="/book1.jpg" alt="お金の小学校" className="w-full h-full object-cover" />
+              </div>
+              {/* 書籍画像2 (4枚目) */}
+              <div className="w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform rotate-[3deg] hover:rotate-0 transition-transform duration-500 mt-8">
+                <img src="/book2.png" alt="退職金で損する人得する人" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </RevealOnScroll>
         </div>
       </section>
 
@@ -525,111 +636,7 @@ const BrandSite = () => {
         </div>
       </section>
 
-      {/* Profile Section */}
-      <section id="profile" className="py-32 bg-white px-6 md:px-12 lg:px-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start gap-12 md:gap-24">
-            <div className="w-full md:w-5/12 space-y-12 sticky top-32">
-              <RevealOnScroll animation="fade-right">
-                <div className="relative group">
-                  <div className="aspect-[3/4] overflow-hidden rounded-[2rem] relative z-10 shadow-2xl">
-                    {/* プロフィール画像: 2枚目の画像 */}
-                    <img
-                      src="/profile_main.jpg"
-                      alt="Profile"
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                </div>
 
-                <div className="mt-8">
-                  <h4 className="text-sm font-bold text-slate-400 mb-6 border-b border-slate-200 pb-2 inline-block uppercase tracking-widest">保有資格</h4>
-                  <div className="grid grid-cols-1 gap-3">
-                    {["FP技能士", "公的年金アドバイザー", "住宅ローンアドバイザー", "確定拠出年金診断士", "がんファイナンスアドバイザー", "生保損保保険募集人", "お金の小学校認定講師"].map((lic, i) => (
-                      <div key={i} className="flex items-center gap-3 bg-slate-50 px-4 py-3 rounded-xl border border-slate-100 text-sm text-slate-600 hover:bg-white hover:shadow-sm transition-all">
-                        <div className="bg-sky-100 p-1 rounded-full"><Check size={12} className="text-sky-600" /></div>
-                        {lic}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </RevealOnScroll>
-            </div>
-
-            <div className="w-full md:w-7/12 space-y-16">
-              <RevealOnScroll>
-                <div className="space-y-8">
-                  <div>
-                    <p className="text-sky-600 font-medium tracking-widest text-sm uppercase mb-2">Profile</p>
-                    <h2 className="text-3xl font-light text-slate-800 leading-tight">
-                      年間100冊の本と、<br />
-                      等身大の経験を武器に。
-                    </h2>
-                  </div>
-
-                  <div className="space-y-6 text-slate-600 leading-relaxed">
-                    <p>
-                      1979年 静岡生まれ。営業職を経て、独立を決意。「お金」で人生の選択肢を狭めてほしくないという想いから、FPとしての活動をスタートしました。
-                    </p>
-                    <p>
-                      独立後の成功と葛藤、そして年間100冊の読書で培った知識を活かし、教科書通りではない「生きたお金の知恵」をお伝えします。
-                    </p>
-                  </div>
-                </div>
-
-                {/* 経歴 */}
-                <div className="pt-8">
-                  <h4 className="text-sm font-bold text-slate-800 mb-6 border-b border-slate-200 pb-2 inline-block">これまでの歩み</h4>
-                  <div className="space-y-8 border-l-2 border-slate-100 ml-3 pl-8 relative">
-                    {[
-                      { year: "10代", title: "バスケに明け暮れた青春時代", desc: "静岡生まれ。小中高とバスケ部に所属。近畿大学入学を機に大阪へ転居。" },
-                      { year: "20代", title: "「学び」への目覚め", desc: "営業・マネージメント職を経験。友人の影響で猛勉強を開始し、年間100冊の読書を10年継続。" },
-                      { year: "30代", title: "独立、そして成功と葛藤", desc: "営業代行で独立し年商2億を達成。雑誌の取材を2回受けるなど実績を残すが、より個人の人生に寄り添う道を志す。" },
-                      { year: "現在", title: "FPとして奔走する日々", desc: "独立系FP事務所へ所属。「お金の小学校認定講師」としても活動中。お客様のお金の問題解決に奔走中。" },
-                    ].map((item, i) => (
-                      <div key={i} className="relative group">
-                        <span className={`absolute -left-[39px] top-1.5 w-5 h-5 rounded-full border-4 border-white transition-colors duration-300 ${i === 3 ? 'bg-sky-500 ring-2 ring-sky-100' : 'bg-slate-300 group-hover:bg-sky-300'}`}></span>
-                        <span className={`text-sm font-bold block mb-1 transition-colors duration-300 ${i === 3 ? 'text-sky-600' : 'text-slate-400 group-hover:text-sky-500'}`}>{item.year}</span>
-                        <h5 className="text-lg font-bold text-slate-700 group-hover:text-sky-700 transition-colors">{item.title}</h5>
-                        <p className="text-sm text-slate-500 mt-1">{item.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </RevealOnScroll>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 書籍監修セクション (独立したブロック) */}
-      <section className="py-24 bg-slate-50 relative overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
-          <RevealOnScroll className="bg-white rounded-[3rem] p-12 md:p-16 shadow-xl flex flex-col md:flex-row items-center gap-12 relative overflow-hidden border border-slate-100">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-sky-100/50 via-transparent to-transparent pointer-events-none"></div>
-
-            <div className="md:w-1/2 space-y-6 z-10">
-              <span className="text-sky-600 font-medium tracking-widest text-sm uppercase block mb-2">Works</span>
-              <h2 className="text-3xl font-bold text-slate-800">書籍監修</h2>
-              <p className="text-slate-600 leading-relaxed">
-                「お金の小学校」「退職金で損する人得する人」など、お金に関する書籍の監修も行っています。<br />
-                難しいことを分かりやすく伝えることを大切にしています。
-              </p>
-            </div>
-
-            <div className="md:w-1/2 flex gap-6 z-10 justify-center">
-              {/* 書籍画像1 (3枚目) */}
-              <div className="w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
-                <img src="/book1.jpg" alt="お金の小学校" className="w-full h-full object-cover" />
-              </div>
-              {/* 書籍画像2 (4枚目) */}
-              <div className="w-1/2 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transform rotate-[3deg] hover:rotate-0 transition-transform duration-500 mt-8">
-                <img src="/book2.png" alt="退職金で損する人得する人" className="w-full h-full object-cover" />
-              </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
